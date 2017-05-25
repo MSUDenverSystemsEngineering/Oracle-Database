@@ -138,7 +138,7 @@ Try {
 		##* POST-INSTALLATION
 		##*===============================================
 		[string]$installPhase = 'Post-Installation'
-		Copy-File -Path "$dirSupportFiles\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
+		Copy-File -Path "$dirSupportFiles\Admin\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
 		## <Perform Post-Installation tasks here>
 		If (($envOSVersion -like "6.1*")) {
 		Execute-Process -Path "reg.exe" -Parameters "import ${dirSupportFiles}\ODBC.reg" -PassThru
