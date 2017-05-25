@@ -141,7 +141,10 @@ Try {
 
 		## <Perform Post-Installation tasks here>
 		If (($envOSVersion -like "6.1*")) {
-			## Set-Registry here
+		Copy-File -Path "$dirSupportFiles\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
+		
+		Execute-Process -FilePath "reg.exe" -Parameters "import $dirSupportFiles\ODBC.reg" -PassThru
+		
 		}
 		Else {
 			Copy-File -Path "$dirSupportFiles\Admin\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
