@@ -1,0 +1,101 @@
+# TNSNAMES.ORA Network Configuration File: revised 9/14/2015 (Aubrey Whitley) to accommodate  
+# OVM to VMware server migrations.
+# 
+
+PROD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pldbban1.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Prod)
+    )
+  )
+
+PROD.MSUDENVER.EDU =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pldbban1.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Prod)
+    )
+  )
+
+PROD.MSCD.EDU =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pldbban1.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Prod)
+    )
+  )
+
+
+###########################
+TEST =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = tldbban1.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Test)
+    )
+  )
+
+TEST.MSUDENVER.EDU =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = tldbban1.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Test)
+    )
+  )
+
+
+
+##################################
+TEST11 =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = tldbban2.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Test11.msudenver.edu)
+    )
+  )
+
+TEST11.msudenver.edu =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = tldbban2.msudenver.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Test11.msudenver.edu)
+    )
+  )
+
+
+#####################
+APPSP =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pldbops1.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Appsp.msudenver.edu)
+    )
+  )
+
+APPSP.MSUDENVER.EDU =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pldbops1.edu)(PORT = 1721))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = Appsp.msudenver.edu)
+    )
+  )
+
