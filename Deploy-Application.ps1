@@ -138,11 +138,15 @@ Try {
 		##* POST-INSTALLATION
 		##*===============================================
 		[string]$installPhase = 'Post-Installation'
-
+		Copy-File -Path "$dirSupportFiles\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
 		## <Perform Post-Installation tasks here>
-		Copy-File -Path "$dirSupportFiles\Admin\*" -Destination "$envSystemDrive\ORACLE11G\product\11.2.0\client_1\Network\Admin" -Recurse
-		Add-OdbcDsn -Name "Prod" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=PROD", "Description=Prod")
-		Add-OdbcDsn -Name "Test" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=TEST", "Description=Test")
+		If (($envOSVersion -like "6.1*")) {
+		Execute-Process -Path "reg.exe" -Parameters "import ${dirSupportFiles}\ODBC.reg" -PassThru
+		}
+		Else {
+			Add-OdbcDsn -Name "Prod" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=PROD", "Description=Prod")
+			Add-OdbcDsn -Name "Test" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=TEST", "Description=Test")
+		}
 		## Display a message at the end of the install
 		If (-not $useDefaultMsi) {}
 	}
