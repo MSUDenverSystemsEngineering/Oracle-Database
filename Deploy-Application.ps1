@@ -145,7 +145,8 @@ Try {
 		}
 		Else {
 			Add-OdbcDsn -Name "Prod" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=PROD", "Description=Prod")
-			Add-OdbcDsn -Name "Test" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=TEST", "Description=Test")}
+			Add-OdbcDsn -Name "Test" -DsnType "System" -Platform "32-bit" -DriverName "Oracle in OraClient11g_home1" -SetPropertyValue @("ServerName=TEST", "Description=Test")
+		}
 		## Display a message at the end of the install
 		If (-not $useDefaultMsi) {}
 	}
